@@ -11,6 +11,6 @@
  	</global-results>
  </package>
  	
- 	<include file="struts-test.xml"/>
+ 	<include file="struts-board.xml"/>
  
  </struts>

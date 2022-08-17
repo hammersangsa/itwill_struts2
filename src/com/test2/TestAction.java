@@ -34,7 +34,7 @@ public class TestAction extends ActionSupport
 	}
 	
 	//메소드 구분
-	//답변형 게시판 생성
+	//메소드가 무겁다?
 	public String created() throws Exception{
 	//입력창과 입력을 동시 처리	
 		if(dto==null||dto.getMode()==null||dto.getMode().equals("")) {
