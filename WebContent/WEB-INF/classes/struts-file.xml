@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+ <struts>
+ 	<package name="file" extends="struts-default" namespace="/fileTest">
+	
+ 		<result-types>
+ 			<result-type name="tiles" 
+ 			class="org.apache.struts2.views.tiles.TilesResult"/>
+ 		</result-types>
+	
+		<action name="save" class="com.file.FileAction" method="save">
+			<result name="input" type="tiles">file.writeLayout</result>
+			<result name="success" type="redirectAction">list</result>
+		</action>
+		
+		<action name="list" class="com.file.FileAction" method="list">
+			<result name="success" type="tiles">file.listLayout</result>
+		</action>		
+		
+		<action name="delete" class="com.file.FileAction" method="delete">
+			<result name="success" type="redirectAction">list?pageNum=${pageNum }</result>
+		</action>
+	
+		<action name="download" class="com.file.FileAction" method="download">
+			<result name="success" type="stream">
+				<param name="inputName">inputStream</param>
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">fileName="${originalFileName }</param>
+				<param name="bufferSize">1000000</param>
+			</result>
+		</action>
+		 
+ 	</package>
+ </struts>
