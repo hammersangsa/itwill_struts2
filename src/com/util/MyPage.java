@@ -79,5 +79,42 @@ public class MyPage {
 		}
 		return sb.toString();
 	}
-	
+	//javascript로 페이징 처리
+	public String  pageIndexList(int currentPage, int totalPage) {
+		
+		int numPerBlock = 5;
+		int currentPageSetup;
+		int page;
+		String strList = "";
+		
+		if(currentPage==0) {
+			return "";
+		}
+		//표시할 첫 페이지
+		currentPageSetup = (currentPage/numPerBlock)*numPerBlock;
+		if(currentPage%numPerBlock==0) {
+			currentPageSetup = currentPageSetup - numPerBlock;
+		}
+		//◀이전
+		if((totalPage>numPerBlock)&&(currentPageSetup>0)) {
+			strList = "<a onclick='listPage(" 
+					+ currentPageSetup + ");'>◀이전</a>&nbsp;";
+		}
+		//페이지
+		page = currentPageSetup + 1;
+		while((page<=totalPage)&&(page<=currentPageSetup+numPerBlock)) {
+			if(page==currentPage) {
+				strList += "<font color='Fuchsia'>" + page + "</font>&nbsp;";
+			}else {
+				strList += "<a onclick='listPage(" +
+						page + ");'>" + page + "</a>&nbsp;";
+			}
+			page++;
+		}
+		//다음▶
+		if(totalPage-currentPageSetup>numPerBlock) {
+			strList += "<a onclick='listPage(" + page + ");'>다음▶</a>&nbsp;"; 
+		}
+		return strList;
+	}	
 }
