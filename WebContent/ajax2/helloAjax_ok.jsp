@@ -3,8 +3,6 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String cp = request.getContextPath();
-	
-	
 %>
 
 집에 가고싶다!!!

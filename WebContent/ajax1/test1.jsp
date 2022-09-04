@@ -18,25 +18,26 @@
   } );
  </script>
 <script type="text/javascript">
-	//js로 ajax구현
+	//JavaScript로 Ajax구현
 	function sendIt(){
 		//XMLHttpRequest 객체,crome에서만
 		//xmlHttp = new XMLHttpRequest();
 		//전체 브라우저
-		//1
+		//0
 		xmlHttp = createXMLHttpRequest();
-		//2
+		//1
 		var query = "";
 		var su1 = document.getElementById("su1").value;
 		var su2 = document.getElementById("su2").value;
 		var oper = document.getElementById("oper").value;
 		
-		//get방식으로 데이터 전송
 		query = "test1_ok.jsp?su1=" + su1 + "&su2=" + su2 + "&oper=" + oper;
+
 		//3
 		//되돌아오는 데이터를 받는 함수
 		xmlHttp.onreadystatechange = callback
-		
+		//2
+		//get방식으로 데이터 전송
 		//true:비동기
 		xmlHttp.open("GET",query,true);
 		xmlHttp.send(null)
@@ -80,8 +81,6 @@
 	<input type="button" value=" = " onclick="sendIt();"/>
 	<div id="resultDIV" style="display: none;"></div>
 	<br/>
-	
-		
 </div>
 </body>
 </html>

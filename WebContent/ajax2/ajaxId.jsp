@@ -57,7 +57,7 @@
 
 </form>
 
-<div id="resultDIV" style="color: red; border: 1px solid #000000; width: 40%">
+<div id="resultDIV" style="color: black; border: 1px solid #000000; width: 40%">
 
 </div>
 

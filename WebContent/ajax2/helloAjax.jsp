@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Js로 만든 Ajax</title>
+<title>JS로 만든 Ajax</title>
 
 <script type="text/javascript">
 	//객체
